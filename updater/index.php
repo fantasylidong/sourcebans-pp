@@ -2,7 +2,7 @@
 // *************************************************************************
 //  This file is part of SourceBans++.
 //
-//  Copyright (C) 2014-2016 Sarabveer Singh <me@sarabveer.me>
+//  Copyright (C) 2014-2019 SourceBans++ Dev Team <https://github.com/sbpp>
 //
 //  SourceBans++ is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
 //  You should have received a copy of the GNU General Public License
 //  along with SourceBans++. If not, see <http://www.gnu.org/licenses/>.
 //
-//  This file is based off work covered by the following copyright(s):  
+//  This file is based off work covered by the following copyright(s):
 //
 //   SourceBans 1.4.11
 //   Copyright (C) 2007-2015 SourceBans Team - Part of GameConnect
@@ -27,29 +27,18 @@
 
 define('IS_UPDATE', true);
 include "../init.php";
+
+require_once('Updater.php');
+$updater = new Updater($GLOBALS['PDO']);
+
+$theme->assign('updates', $updater->getMessageStack());
+$theme->display('updater.tpl');
+
 //clear compiled themes
-$cachedir = dir(SB_THEMES_COMPILE);
+$cachedir = dir(SB_CACHE);
 while (($entry = $cachedir->read()) !== false) {
     if (is_file($cachedir->path . $entry)) {
         unlink($cachedir->path . $entry);
     }
 }
 $cachedir->close();
-include INCLUDES_PATH . "/CUpdate.php";
-$updater = new CUpdater();
-
-$setup = "Checking current database version...<b> " . $updater->getCurrentRevision() . "</b>";
-if (!$updater->needsUpdate()) {
-    $setup .= "<br />Installation up-to-date.";
-    $theme->assign('setup', $setup);
-    $theme->assign('progress', "");
-    $theme->display('updater.tpl');
-    die();
-}
-$setup .= "<br />Updating database to version: <b>" . $updater->getLatestPackageVersion() . "</b>";
-
-$progress = $updater->doUpdates();
-
-$theme->assign('setup', $setup);
-$theme->assign('progress', $progress);
-$theme->display('updater.tpl');

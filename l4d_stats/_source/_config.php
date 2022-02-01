@@ -11,7 +11,7 @@
 ****************************************************************************/
 
 // MySQL DATA
-$mysql_server = "home.trygek.com:12345";
+$mysql_server = "10.0.0.1";
 $mysql_db = "sourcebans";
 $mysql_user = "morzlee";
 $mysql_password = "anne123";
@@ -19,10 +19,10 @@ $mysql_tableprefix = "";
 
 // SITE SETTINGS
 $site_name = "东的服务器"; // Clan Name
-$site_url = "https://sb.trygek.com:18443/l4d_stats/"; // Clan URL
+$site_url = "http://sb.trygek.com:8880/l4d_stats/"; // Clan URL
 $site_style = "default"; // Site Style
 $site_game = "求生之路2"; // Site Game
-$site_statsurl = "https://sb.trygek.com:18443/l4d_stats/"; // Site Stats URL
+$site_statsurl = "http://sb.trygek.com:8880/l4d_stats/"; // Site Stats URL
 $site_description = "你想看看你们坐牢的数据吗？."; // Site Description
 $site_keywords = "left 4 dead 2, left4dead2, l4d2, survivor, survival horror, apocalypse, online gaming, multiplayer, anne,neko"; // Site Keywords
 
