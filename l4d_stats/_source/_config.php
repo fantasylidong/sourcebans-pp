@@ -93,7 +93,7 @@ $yt_movie15_embed = "vjozkivYqxg"; // Youtube Movie 15 Embed Code
 $yt_movie15_title = "Left 4 Dead 2: The Last Stand #14 - Full Campaign (Full HD)"; // Youtube Movie 15 Title
 
 // LOCAL IP FIX
-$fix_local_ip = "10.0.0.1";
+$fix_local_ip = "10.0.0.248";
 $fix_local_countryip = "114.114.114.114";
 
 /*
