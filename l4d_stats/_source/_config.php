@@ -23,7 +23,7 @@ $site_url = "http://sb.trygek.com:8880/l4d_stats/"; // Clan URL
 $site_style = "default"; // Site Style
 $site_game = "求生之路2"; // Site Game
 $site_statsurl = "http://sb.trygek.com:8880/l4d_stats/"; // Site Stats URL
-$site_description = "欢迎又来到东的服务器玩耍~，如果有人恶意扰乱游戏体验，请踢出并在https://sb.trygek.com:18443/ 申请给予永ban，服务器启用了lilac反作弊系统，自瞄会被封禁永久，软件连跳会被封禁一个月."; // Site Description
+$site_description = "欢迎又来到东的服务器玩耍~."; // Site Description
 $site_keywords = "left 4 dead 2, left4dead2, l4d2, survivor, survival horror, apocalypse, online gaming, multiplayer"; // Site Keywords
 
 // SITE LOGO
@@ -33,7 +33,7 @@ $site_logo_width = "325"; // Logo Image Width
 
 // COMMUNITY SETTINGS
 $site_steamgroup = "https://steamcommunity.com/groups/fantasyking"; // Steamgroup URL
-$site_welcome = "Thank you for using the Custom Player Stats v1.4B121 Modern Template with the associated plugin on your Gameserver(s).</br>You can edit this text completely!<br /><br />We hope you enjoy the Game!"; // Welcome Message
+$site_welcome = "欢迎又来到东的服务器玩耍~</br>如果有人恶意扰乱游戏体验，请踢出并在https://sb.trygek.com:18443/ 申请给予永ban</br>服务器启用了lilac反作弊系统，自瞄会被封禁，软件连跳会被封禁一个月</br></br>Anne服务器地图在原版基础上做了修改，如果你喜欢原版可以用投票切回哦（地图投票）</br></br>绝境求生24特服务器小僵尸限制为18，，被喷会增加12~15个小僵尸，控制特感同时存在上限为8只请尽量别被喷哦</br>"; // Welcome Message
 $site_welcome_intro = ""; // Welcome Intro Movie URL - Empty for only Welcome Message
 
 // PLUGIN SETTING

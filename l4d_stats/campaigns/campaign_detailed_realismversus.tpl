@@ -2,11 +2,11 @@
 	<table class="table">
 		<thead class="content-table-noborder bg-main">
 			<tr>
-				<td rowspan="2">Difficulty</td>
-				<td rowspan="2">Playtime</td>
-				<td rowspan="2">Rounds Lost</td>
-				<td colspan="2">Points</td>
-				<td colspan="2">Destroyed</td>
+				<td>难度</td>
+				<td>游玩时间</td>
+				<td>分数 (PPM)</td>
+				<td>已消灭的小僵尸</td>
+				<td>重启</td>
 			</tr>
 			<tr>
 				<td><img src="../_source/images/icon_infected.png" alt="infected"></td>

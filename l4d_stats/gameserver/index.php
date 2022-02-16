@@ -15,7 +15,7 @@
 error_reporting(0);
 
 require_once("../_source/geoip2.phar");
-require_once 'GameQ.php';
+require_once './GameQ/GameQ.php';
 use GeoIp2\Database\Reader;
 $geoip = new Reader('../_source/GeoLite2-Country.mmdb');
 include("../_source/common.php");
@@ -24,8 +24,8 @@ setcommontemplatevariables($tpl);
 $result = mysql_query("SELECT * FROM " . $mysql_tableprefix . "players WHERE lastontime >= '" . intval(time() - 300) . "' ORDER BY " . $TOTALPOINTS . " DESC");
 $playercount = number_format(mysql_num_rows($result));
 setcommontemplatevariables($tpl);
-$tpl->set("title", "- Gameserver");
-$tpl->set("page_heading", "Who's Online Now? (" . $playercount . ")" );
+$tpl->set("title", "- 游戏服务器");
+$tpl->set("page_heading", "当前在线玩家? (" . $playercount . ")" );
 if (mysql_error()) { $output = "MySQL Error: " . mysql_error() . ""; }
 else {
 	$arr_online = array();

@@ -2,11 +2,11 @@
 	<table class="table">
 		<thead class="content-table-noborder bg-main">
 			<tr>
-				<td>Difficulty</td>
-				<td>Playtime</td>
-				<td>Points (PPM)</td>
-				<td>Destroyed</td>
-				<td>Restarts</td>
+				<td>难度</td>
+				<td>游玩时间</td>
+				<td>分数 (PPM)</td>
+				<td>已消灭的小僵尸</td>
+				<td>重启</td>
 			</tr>
 		</thead>
 		<tbody>

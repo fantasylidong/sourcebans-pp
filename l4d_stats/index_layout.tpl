@@ -19,7 +19,7 @@
 								<div class="card-body rounded-0 text-center">
 									<img src="_source/images/icon_survivors.png" alt="survivors">
 									<h4 class="timer count-title count-number" data-to="<?php foreach ($carousel_spieler as $title => $value): ?><?php echo ($value);?><?php endforeach; ?>" data-speed="2400">&nbsp; </h4><br />
-									Players Participated
+									玩家参与
 								</div>
 							</div>
 						</div>
@@ -28,7 +28,7 @@
 								<div class="card-body rounded-0 text-center">
 									<img src="_source/images/icon_infected.png" alt="infected">
 									<h4 class="timer count-title count-number" data-to="<?php foreach ($carousel_infected_kills as $title => $value): ?><?php echo ($value);?><?php endforeach; ?>" data-speed="2400">&nbsp; </h4><br />
-									Infected Destroyed
+									小僵尸被摧毁
 								</div>
 							</div>
 						</div>
@@ -37,7 +37,7 @@
 								<div class="card-body rounded-0 text-center">
 									<img src="_source/images/icon_headshot.png" alt="headshot">
 									<h4 class="timer count-title count-number" data-to="<?php foreach ($carousel_headshots as $title => $value): ?><?php echo ($value);?><?php endforeach; ?>" data-speed="2400">&nbsp; </h4><br />
-									Headshots Scored
+									爆头数
 								</div>
 							</div>
 						</div>

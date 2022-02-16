@@ -5,11 +5,11 @@
 		<table class="table">
 			<thead class="content-table-noborder bg-main">
 				<tr>
-					<td rowspan="2">Campaign</td>
-					<td rowspan="2">Playtime</td>
-					<td rowspan="2">Rounds Lost</td>
-					<td colspan="2">Points</td>
-					<td colspan="2">Destroyed</td>
+					<td rowspan="2">难度</td>
+					<td rowspan="2">游玩时间</td>
+					<td rowspan="2">输的次数</td>
+					<td colspan="2">分数</td>
+					<td colspan="2">消灭的小僵尸</td>
 				</tr>
 				<tr>
 					<td><img src="../_source/images/icon_infected.png" alt="infected"></td>
