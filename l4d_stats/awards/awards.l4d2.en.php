@@ -22,6 +22,6 @@ $award_defib = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 是�
 $award_jockey = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 是Jockey救火大师 ，<b>救了 %s 个被骑队友</b>.</h6>";
 $award_charger = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 是Charger救火大师 ，<b>救了 %s 个被锤队友</b>.</h6>";
 $award_matador = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 是近战刀牛大师， <b>%s 被刀的牛只想哭</b>.</h6>";
-award_scatteringram = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> is a Crowd Breaker with <b>%s Scattering Rams</b>.</h6>";
+award_scatteringram = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 是一个 Crowd Breaker by <b>%s 次Scattering Rams</b>.</h6>";
 
 ?>

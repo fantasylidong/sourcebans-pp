@@ -45,7 +45,7 @@
 				</div>
 				<br />
 				<?php if ($site_welcome_intro == "") {
-					echo "<div class=\"card rounded-0\"><div class=\"card-body\"><div class=\"row d-flex align-items-top\"><div class=\"w-100 px-3 text-left text-md-left\"><h5 class=\"card-title\">Welcome</h5>$site_welcome</div></div></div></div>"; }
+					echo "<div class=\"card rounded-0\"><div class=\"card-body\"><div class=\"row d-flex align-items-top\"><div class=\"w-100 px-3 text-left text-md-left\"><h5 class=\"card-title\">欢迎</h5>$site_welcome</div></div></div></div>"; }
 					else { echo "<div class=\"card rounded-0\"><div class=\"card-body\"><div class=\"row d-flex align-items-top\"><div class=\"w-50 px-3 text-left text-md-left\"><h5 class=\"card-title\">Welcome</h5>$site_welcome</div><div class=\"w-50 px-3 text-right text-md-right\"><video playsinline=\"playsinline\" autoplay=\"autoplay\" muted=\"muted\" loop=\"loop\" width=\"100%\"><source src=\"$site_welcome_intro\" type=\"video/mp4\"></video></div></div></div></div>"; }
 				?>
 				<br /><br />

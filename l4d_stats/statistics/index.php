@@ -304,6 +304,8 @@ $stats->set("arr_demerits", $arr_demerits);
 $stats->set("arr_maps", $arr_maps);
 $stats->set("arr_achievements", $arr_achievements);
 $output = $stats->fetch("" . $templatefiles['statistics_output.tpl']);
+$tpl->set("title", "- 数据");
+$tpl->set("page_heading", "数据");
 $tpl->set('body', trim($output));
 echo $tpl->fetch("" . $templatefiles['statistics_layout.tpl']);
 
