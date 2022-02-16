@@ -50,6 +50,6 @@
 				?>
 				<br /><br />
 				<?php if ($youtube == "enabled"): ?><?php include('_source/youtube.php');?><?php endif; ?>
-				<?php if ($gameserver == "disabled"): ?><div class="card rounded-0"><div class="no-more-tables"><h5>&nbsp;<br />&nbsp;&nbsp;&nbsp; <?php echo $page_heading;?><br /><br /></h5><?php echo $body;?></div></div><br /><br /><?php endif; ?>
+				<?php if ($gameserver == "enabled"): ?><div class="card rounded-0"><div class="no-more-tables"><h5>&nbsp;<br />&nbsp;&nbsp;&nbsp; <?php echo $page_heading;?><br /><br /></h5><?php echo $body;?></div></div><br /><br /><?php endif; ?>
 			</div>
 <?php include('_source/footer.php');?>

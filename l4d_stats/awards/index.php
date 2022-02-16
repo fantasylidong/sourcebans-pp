@@ -176,8 +176,8 @@ if ($cachedate < time() - (60*$award_cache_refresh)) {
 	file_put_contents("./awards_cache.html", trim($award_output));
 }
 setcommontemplatevariables($tpl);
-$tpl->set("title", "- Awards");
-$tpl->set("page_heading", "Awards");
+$tpl->set("title", "- 奖项");
+$tpl->set("page_heading", "奖项");
 $output = file_get_contents("./awards_cache.html");
 $tpl->set('body', trim($output));
 echo $tpl->fetch("./" . $templatefiles['awards_layout.tpl']);

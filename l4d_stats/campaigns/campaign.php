@@ -109,8 +109,8 @@ if ($type == "coop" || $type == "versus" || $type == "realism" || $type == "surv
 	$output = trim($campaigninfo . $output);
 }
 else {
-	$tpl->set("title", "- Campaigns"); // Window title
-	$tpl->set("page_heading", "Campaigns"); // Page header
+	$tpl->set("title", "- 地图"); // Window title
+	$tpl->set("page_heading", "地图"); // Page header
 	setcommontemplatevariables($tpl);
 	$output = "<meta http-equiv=\"refresh\" content=\"3; URL=index.php?type=coop\"><br /><center>You will be forwarded ...</center>";
 }

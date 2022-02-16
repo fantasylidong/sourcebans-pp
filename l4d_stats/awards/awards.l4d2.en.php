@@ -14,14 +14,14 @@
 //error_reporting(E_ALL);
 error_reporting(0);
 
-$award_killspitter = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> Don't Like Zombies Without Manners with <b>%s Spitter</b> kills.</h6>";
-$award_killjockey = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> Likes To Be On Top with <b>%s Jockey</b> kills.</h6>";
-$award_killcharger = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> Don't Like To Be Pushed Around with <b>%s Charger</b> kills.</h6>";
-$award_adrenaline = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> Needs The Teammates To Stay In Top Speed with <b>%s Adrenalines Given</b>.</h6>";
-$award_defib = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> is A Life Giver with <b>%s Defibrillators Used on Teammates</b>.</h6>";
-$award_jockey = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> is The Freedom Fighter by <b>Saving %s Teammates From Jockeys</b>.</h6>";
-$award_charger = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> is Giving Hell To Bullies <b>Saving %s Teammates From Chargers</b>.</h6>";
-$award_matador = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> is The Matador with <b>%s Leveled Charges</b>.</h6>";
-$award_scatteringram = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> is a Crowd Breaker with <b>%s Scattering Rams</b>.</h6>";
+$award_killspitter = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 最讨厌流口水的怪 ，已经杀了 <b>%s 只Spitter 了 </b>.</h6>";
+$award_killjockey = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 最讨厌被骑，已经消灭 <b>%s Jockey</b> .</h6>";
+$award_killcharger = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 最讨厌被撞，已经干掉 <b>%s 只Charger</b> .</h6>";
+$award_adrenaline = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 想让队友加速跑起来，共给了 <b>%s 根针</b>.</h6>";
+$award_defib = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 是拯救天使共用电击器电起队友<b>%s 次</b>.</h6>";
+$award_jockey = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 是Jockey救火大师 ，<b>救了 %s 个被骑队友</b>.</h6>";
+$award_charger = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 是Charger救火大师 ，<b>救了 %s 个被锤队友</b>.</h6>";
+$award_matador = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 是近战刀牛大师， <b>%s 被刀的牛只想哭</b>.</h6>";
+award_scatteringram = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> is a Crowd Breaker with <b>%s Scattering Rams</b>.</h6>";
 
 ?>

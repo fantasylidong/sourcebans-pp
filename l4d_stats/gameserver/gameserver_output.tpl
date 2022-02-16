@@ -1,11 +1,11 @@
 <table class="table">
 	<thead class="content-table-noborder bg-main">
 		<tr>
-			<td>Gamemode</td>
-			<td>Player</td>
-			<td>Points</td>
-			<td>Country</td>
-			<td>Playtime</td>
+			<td>游戏模式</td>
+			<td>玩家</td>
+			<td>分数</td>
+			<td>国家</td>
+			<td>游玩时间</td>
 		</tr>
 	</thead>
 	<tbody>

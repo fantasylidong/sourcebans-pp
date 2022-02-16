@@ -24,7 +24,7 @@ $result = mysql_query("SELECT * FROM " . $mysql_tableprefix . "players WHERE las
 $playercount = number_format(mysql_num_rows($result));
 setcommontemplatevariables($tpl);
 $tpl->set("title", ""); // Window title
-$tpl->set("page_heading", "Who's Online Now? (" . $playercount . ")" );
+$tpl->set("page_heading", "目前在线玩家? (" . $playercount . ")" );
 if (mysql_error()) { $output = "<p><b>MySQL Error:</b> " . mysql_error() . "</p>"; }
 else {
 	$arr_online = array();
@@ -34,13 +34,13 @@ else {
 		if ($row['lastontime'] > time()) $row['lastontime'] = time();
 		$lastgamemode = "Unknown";
 		switch ($row['lastgamemode']) {
-			case 0: $lastgamemode = "Coop"; break;
-			case 1: $lastgamemode = "Versus"; break;
-			case 2: $lastgamemode = "Realism"; break;
-			case 3: $lastgamemode = "Survival"; break;
-			case 4: $lastgamemode = "Scavenge"; break;
-			case 5: $lastgamemode = "Realism&nbsp;Versus"; break;
-			case 6: $lastgamemode = "Mutation"; break;
+			case 0: $lastgamemode = "战役"; break;
+			case 1: $lastgamemode = "对抗"; break;
+			case 2: $lastgamemode = "写实"; break;
+			case 3: $lastgamemode = "生存"; break;
+			case 4: $lastgamemode = "清道夫"; break;
+			case 5: $lastgamemode = "写实对抗"; break;
+			case 6: $lastgamemode = "突变模式"; break;
 		}
 		$player_ip = $row['ip'];
 		if ($row['ip'] == $fix_local_ip) { $country_record = $geoip->country($fix_local_countryip); } else { $country_record = $geoip->country($row['ip']); }

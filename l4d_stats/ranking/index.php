@@ -85,7 +85,7 @@ if($type == "" || $type == "coop" || $type == "realism" || $type == "versus" || 
 			else {
 				$i = ($page_current !== 0) ? 1 + intval($page_current * 25) : 1;
 				while ($row = mysql_fetch_array($result)) {
-					if ($row['ip'] == $fix_local_ip) { $country_record = $geoip->country($fix_local_countryip); } else { $country_record = $geoip->country($row['ip']); }
+					$country_record = $geoip->country($row['ip']);
 					$line = createtablerowtooltip($row, $i);
 					$line .= "<tr onclick=\"window.location='player.php?steamid=" . $row['steamid']."'\" style=\"cursor:pointer\"><td data-title=\"Rank:\">" . number_format($i) . "</td><td data-title=\"Player:\">" . htmlentities($row['name'], ENT_COMPAT, "UTF-8") . "</td>";
 					$line .= "<td data-title=\"Points:\">" . number_format($row['real_points']) . "</td>";
@@ -140,7 +140,7 @@ if ($result && mysql_num_rows($result) > 0) {
 		$name = htmlentities($row['name'], ENT_COMPAT, "UTF-8");
 		$avatarimg = "";
 		$playerheadline = "";
-		if ($row['ip'] == $fix_local_ip) { $country_record = $geoip->country($fix_local_countryip); } else { $country_record = $geoip->country($row['ip']); }
+		$country_record = $geoip->country($row['ip']);
 		$playername = ($showplayerflags ? "" : "") . "player.php?steamid=" . $row['steamid'] . " ";
 		if ($playerheadline){ $playername = "<table border=0 cellspacing=0 cellpadding=0 class=\"top10\"><tr><td rowspan=\"2\">&nbsp;</td><td>" . $playername . "</td></tr><tr><td class=\"summary\">" . $playerheadline . "</td></tr></table>";}
 		if ($avatarimg){$playername = "<table border=0 cellspacing=0 cellpadding=0 class=\"top10\"><tr><td>&nbsp;</td><td>" . $avatarimg . "</td>" . ($playerheadline ? "" : "<td>&nbsp;</td>") . "<td>" . $playername . "</td></tr></table>";}
@@ -156,7 +156,7 @@ if ($result && mysql_num_rows($result) > 0){
 		$name = htmlentities($row['name'], ENT_COMPAT, "UTF-8");
 		$avatarimg = "";
 		$playerheadline = "";
-		if ($row['ip'] == $fix_local_ip) { $country_record = $geoip->country($fix_local_countryip); } else { $country_record = $geoip->country($row['ip']); }
+		$country_record = $geoip->country($row['ip']);
 		$playername = ($showplayerflags ? "" : "") . "" . $name . "";
 		if ($playerheadline) {$playername = "<table border=0 cellspacing=0 cellpadding=0 class=\"top10\"><tr><td rowspan=\"2\">&nbsp;</td><td>" . $playername . "</td></tr><tr><td class=\"summary\">" . $playerheadline . "</td></tr></table>";}
 		if ($avatarimg){$playername = "<table border=0 cellspacing=0 cellpadding=0 class=\"top10\"><tr><td>&nbsp;</td><td>" . $avatarimg . "</td>" . ($playerheadline ? "" : "<td>&nbsp;</td>") . "<td>" . $playername . "</td></tr></table>";}
@@ -176,7 +176,7 @@ if ($result && mysql_num_rows($result) > 0){
 		$name = htmlentities($row['name'], ENT_COMPAT, "UTF-8");
 		$avatarimg = "";
 		$playerheadline = "";
-		if ($row['ip'] == $fix_local_ip) { $country_record = $geoip->country($fix_local_countryip); } else { $country_record = $geoip->country($row['ip']); }
+		$country_record = $geoip->country($row['ip']);
 		$playername = ($showplayerflags ? "" : "") . "player.php?steamid=" . $row['steamid'] . " ";
 			if ($playerheadline){$playername = "<table border=0 cellspacing=0 cellpadding=0 class=\"top10\"><tr><td rowspan=\"2\">&nbsp;</td><td>" . $playername . "</td></tr><tr><td class=\"summary\">" . $playerheadline . "</td></tr></table>";}
 			if ($avatarimg){$playername = "<table border=0 cellspacing=0 cellpadding=0 class=\"top10\"><tr><td>&nbsp;</td><td>" . $avatarimg . "</td>" . ($playerheadline ? "" : "<td>&nbsp;</td>") . "<td>" . $playername . "</td></tr></table>";}
@@ -192,7 +192,7 @@ if ($result && mysql_num_rows($result) > 0){
 		$name = htmlentities($row['name'], ENT_COMPAT, "UTF-8");
 		$avatarimg = "";
 		$playerheadline = "";
-		if ($row['ip'] == $fix_local_ip) { $country_record = $geoip->country($fix_local_countryip); } else { $country_record = $geoip->country($row['ip']); }
+		$country_record = $geoip->country($row['ip']);
 		$playername = ($showplayerflags ? "" : "") . "" . $name . "";
 		if (!$playerheadline && !$avatarimg){
 			if ($top3_glow == "enabled") { $playername = "<div class=\"tablex\"><div id=\"steamprofile_avatar\" class=\"text-left steamprofile\" title=" . $row['steamid'] . "></div><div id=\"steamprofile_avatar_top_rare\"></div><div id=\"steamprofile_avatar_fix\"></div><div class=\"cellx\"><div style=\"position:relative; overflow: hidden;\" class=\"text-left\">&nbsp;Player: " . $playername . "<div class=\"text-left\">&nbsp;Points: " . gettotalpoints($row) . "</div><div class=\"text-left\">&nbsp;Glow Reward: <font color=\"#025bea\">Rare</font></div></div></div></div>"; }
@@ -209,7 +209,7 @@ if ($result && mysql_num_rows($result) > 0){
 		$name = htmlentities($row['name'], ENT_COMPAT, "UTF-8");
 		$avatarimg = "";
 		$playerheadline = "";
-		if ($row['ip'] == $fix_local_ip) { $country_record = $geoip->country($fix_local_countryip); } else { $country_record = $geoip->country($row['ip']); }
+		$country_record = $geoip->country($row['ip']);
 		$playername = ($showplayerflags ? "" : "") . "player.php?steamid=" . $row['steamid'] . " ";
 			if ($playerheadline){$playername = "<table border=0 cellspacing=0 cellpadding=0 class=\"top10\"><tr><td rowspan=\"2\">&nbsp;</td><td>" . $playername . "</td></tr><tr><td class=\"summary\">" . $playerheadline . "</td></tr></table>";}
 			if ($avatarimg){$playername = "<table border=0 cellspacing=0 cellpadding=0 class=\"top10\"><tr><td>&nbsp;</td><td>" . $avatarimg . "</td>" . ($playerheadline ? "" : "<td>&nbsp;</td>") . "<td>" . $playername . "</td></tr></table>";}

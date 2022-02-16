@@ -3,10 +3,10 @@
 <div class="card-deck">
 	<div class="card rounded-0">
 		<div class="card-body">
-			<h5 class="card-title">Information</h5>
+			<h5 class="card-title">信息</h5>
 			<table class="table content-table-noborder text-left">
 				<tr>
-					<td class="w-50">Steam Name:</td>
+					<td class="w-50">Steam 名字:</td>
 					<td class="w-50"><?php echo $player_name;?></td>
 				</tr>
 				<tr>
@@ -18,11 +18,11 @@
 					<td class="w-50"><?php echo $player_steamid;?></td>
 				</tr>
 				<tr>
-					<td class="w-50">Playtime:</td>
+					<td class="w-50">游玩时间:</td>
 					<td class="w-50"><?php echo $player_playtime;?></td>
 				</tr>
 				<tr>
-					<td class="w-50">Last Online:</td>
+					<td class="w-50">最后上线:</td>
 					<td class="w-50"><?php echo $player_lastonline;?></td>
 				</tr>
 			</table>
@@ -31,38 +31,38 @@
 	<br /><br />
 	<div class="card rounded-0">
 		<div class="card-body">
-			<h5 class="card-title">Statistics</h5>
+			<h5 class="card-title">数据</h5>
 				<table class="table content-table-noborder text-left">
 					<tr>
-						<td class="w-50">Rank:</td>
+						<td class="w-50">排行:</td>
 						<td class="w-50"><?php echo $player_rank;?></td>
 					</tr>
 					<tr>
-						<td class="w-50">Points:</td>
+						<td class="w-50">分数:</td>
 						<td class="w-50"><?php echo $player_points;?></td>
 					</tr>
 					<tr>
-						<td class="w-50">Points per Minute:</td>
+						<td class="w-50">每分钟获取分数:</td>
 						<td class="w-50"><?php echo $player_ppm;?></td>
 					</tr>
 					<tr>
-						<td class="w-50">Infected destroyed:</td>
+						<td class="w-50">感染者消灭:</td>
 						<td class="w-50"><?php echo $infected_killed;?></td>
 					</tr>
 					<tr>
-						<td class="w-50">Survivors destroyed:</td>
+						<td class="w-50">生还者消灭:</td>
 						<td class="w-50"><?php echo $survivors_killed;?></td>
 					</tr>
 					<tr>
-						<td class="w-50">Headshots:</td>
+						<td class="w-50">爆头:</td>
 						<td class="w-50"><?php echo $player_headshots;?></td>
 					</tr>
 					<tr>
-						<td class="w-50">Headshot Ratio:</td>
+						<td class="w-50">爆头率:</td>
 						<td class="w-50"><?php echo $player_ratio;?> %</td>
 					</tr>
 					<tr onclick="window.location='timedmaps.php?steamid=<?php echo $player_steamid;?>'" style="cursor:pointer">
-						<td class="w-50">Timed Rounds:</td>
+						<td class="w-50">游玩地图数量:</td>
 						<td class="w-50"><?php echo $player_timedmaps;?></td>
 					</tr>
 				</table>
@@ -73,7 +73,7 @@
 	<div class="card-deck">
 		<div class="card rounded-0">
 			<div class="card-body">
-				<h5 class="card-title">Teamplayer Demerits</h5>
+				<h5 class="card-title">失误数据</h5>
 					<table class="table content-table-noborder text-left">
 						<?php foreach ($arr_demerits as $title => $arr): ?>
 							<tr>
@@ -87,7 +87,7 @@
 			<br /><br />
 			<div class="card rounded-0">
 				<div class="card-body">
-					<h5 class="card-title">Points per Minute as Infected</h5>
+					<h5 class="card-title">当感染者每分钟获取分数</h5>
 					<table class="table content-table-noborder text-left">
 						<tr>
 							<td class="w-50">Smoker:</td>
@@ -113,7 +113,7 @@
 		<br /><br />
 		<div class="card rounded-0">
 			<div class="card-body">
-				<h5 class="card-title text-left">Awards as Survivor</h5>
+				<h5 class="card-title text-left">当生还者获取的奖励</h5>
 				<table class="table content-table-noborder text-left">
 					<?php foreach ($arr_survivor_awards as $award => $arr): ?>
 						<tr>
@@ -127,7 +127,7 @@
 		<br /><br />
 		<div class="card rounded-0">
 			<div class="card-body">
-				<h5 class="card-title text-left">Awards as Infected</h5>
+				<h5 class="card-title text-left">当被感染者获取的奖励</h5>
 				<table class="table content-table-noborder text-left">
 					<?php foreach ($arr_infected_awards as $title => $arr): ?>
 						<tr>

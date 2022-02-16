@@ -3,12 +3,12 @@
 		<table class="table">
 			<thead class="content-table-noborder bg-main">
 				<tr>
-					<td>Rank</td>
-					<td>Player</td>
-					<td>Points</td>
-					<td>Country</td>
-					<td>Playtime</td>
-					<td>Last Online</td>
+					<td>排名</td>
+					<td>玩家</td>
+					<td>分数</td>
+					<td>国家</td>
+					<td>游玩时间</td>
+					<td>最后上线</td>
 				</tr>
 			</thead>
 			<tbody>

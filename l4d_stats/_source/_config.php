@@ -11,20 +11,20 @@
 ****************************************************************************/
 
 // MySQL DATA
-$mysql_server = "home.trygek.com:12345";
-$mysql_db = "sourcebans";
+$mysql_server = "10.0.0.4";
+$mysql_db = "l4d2stats";
 $mysql_user = "morzlee";
 $mysql_password = "anne123";
 $mysql_tableprefix = "";
 
 // SITE SETTINGS
-$site_name = "东的服务器"; // Clan Name
-$site_url = "https://sb.trygek.com:18443/l4d_stats/"; // Clan URL
+$site_name = "今天你又来坐牢了？"; // Clan Name
+$site_url = "http://sb.trygek.com:8880/l4d_stats/"; // Clan URL
 $site_style = "default"; // Site Style
 $site_game = "求生之路2"; // Site Game
-$site_statsurl = "https://sb.trygek.com:18443/l4d_stats/"; // Site Stats URL
-$site_description = "你想看看你们坐牢的数据吗？."; // Site Description
-$site_keywords = "left 4 dead 2, left4dead2, l4d2, survivor, survival horror, apocalypse, online gaming, multiplayer, anne,neko"; // Site Keywords
+$site_statsurl = "http://sb.trygek.com:8880/l4d_stats/"; // Site Stats URL
+$site_description = "欢迎又来到东的服务器玩耍~，如果有人恶意扰乱游戏体验，请踢出并在https://sb.trygek.com:18443/ 申请给予永ban，服务器启用了lilac反作弊系统，自瞄会被封禁永久，软件连跳会被封禁一个月."; // Site Description
+$site_keywords = "left 4 dead 2, left4dead2, l4d2, survivor, survival horror, apocalypse, online gaming, multiplayer"; // Site Keywords
 
 // SITE LOGO
 $site_logo = "_source/images/logo.png"; // Logo Image URL - Options: Empty for only Clan Name
@@ -33,7 +33,7 @@ $site_logo_width = "325"; // Logo Image Width
 
 // COMMUNITY SETTINGS
 $site_steamgroup = "https://steamcommunity.com/groups/fantasyking"; // Steamgroup URL
-$site_welcome = "欢迎来到东的求生之路2网页排名.<br />让我们看看大家都有怎样的骚操作，怎样好好坐牢!"; // Welcome Message
+$site_welcome = "Thank you for using the Custom Player Stats v1.4B121 Modern Template with the associated plugin on your Gameserver(s).</br>You can edit this text completely!<br /><br />We hope you enjoy the Game!"; // Welcome Message
 $site_welcome_intro = ""; // Welcome Intro Movie URL - Empty for only Welcome Message
 
 // PLUGIN SETTING
@@ -41,18 +41,18 @@ $top3_site = "enabled"; // Top3 Ranking - Options: enabled, disabled
 
 // Gameserver
 $gameserver = "enabled"; // Gameserver Page - Options: enabled, disabled
-$ip = gethostbyname("home.trygek.com");
+$ip = gethostbyname('home.trygek.com');
 $server1_ip = $ip;$server1_port = "2330"; // Server 1 - IP:PORT
-$server2_ip = $ip;$server2_port = "2333"; // Server 2 - IP:PORT
-$server3_ip = $ip;$server3_port = "2337"; // Server 3 - IP:PORT
-$server4_ip = "";$server4_port = ""; // Server 4 - IP:PORT
-$server5_ip = "";$server5_port = ""; // Server 5 - IP:PORT
-$server6_ip = "";$server6_port = ""; // Server 6 - IP:PORT
-$server7_ip = "";$server7_port = ""; // Server 7 - IP:PORT
-$server8_ip = "";$server8_port = ""; // Server 8 - IP:PORT
-$server9_ip = "";$server9_port = ""; // Server 9 - IP:PORT
-$server10_ip = "";$server10_port = ""; // Server 10 - IP:PORT
-$server11_ip = "";$server11_port = ""; // Server 11 - IP:PORT
+$server2_ip = $ip;$server2_port = "2331"; // Server 2 - IP:PORT
+$server3_ip = $ip;$server3_port = "2332"; // Server 3 - IP:PORT
+$server4_ip = $ip;$server4_port = "2333"; // Server 4 - IP:PORT
+$server5_ip = $ip;$server5_port = "2334"; // Server 5 - IP:PORT
+$server6_ip = $ip;$server6_port = "2335"; // Server 6 - IP:PORT
+$server7_ip = $ip;$server7_port = "2336"; // Server 7 - IP:PORT
+$server8_ip = $ip;$server8_port = "2337"; // Server 8 - IP:PORT
+$server9_ip = $ip;$server9_port = "2338"; // Server 9 - IP:PORT
+$server10_ip = $ip;$server10_port = "2339"; // Server 10 - IP:PORT
+$server11_ip = $ip;$server11_port = "2340"; // Server 11 - IP:PORT
 $server12_ip = "";$server12_port = ""; // Server 12 - IP:PORT
 $server13_ip = "";$server13_port = ""; // Server 13 - IP:PORT
 $server14_ip = "";$server14_port = ""; // Server 14 - IP:PORT

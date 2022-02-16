@@ -51,7 +51,7 @@ else {
 		break;
 	}
 	$player_ip = $row['ip'];
-	$country_record = $geoip->country($row['ip']);
+	if ($row['ip'] == $fix_local_ip) { $country_record = $geoip->country($fix_local_countryip); } else { $country_record = $geoip->country($row['ip']); }
 	$playername = ($showplayerflags ? "" : "")  . htmlentities($row['name'], ENT_COMPAT, "UTF-8") . "";
 	$line = "<tr onclick=\"window.location='../ranking/player.php?steamid=" . $row['steamid']."'\" style=\"cursor:pointer\"><td data-title=\"Gamemode:\">" . $lastgamemode . "</td>";
 	$line .= "<td data-title=\"Player:\">" . $playername . "</td><td data-title=\"Points:\">" . gettotalpoints($row) . "</td><td data-title=\"Country:\"><img width=\"40\" height=\"20\" src=\"../_source/images/flags/" . strtolower($country_record->country->isoCode) . ".gif\" alt=\"" . strtolower($country_record->country->isoCode) . "\"></td><td data-title=\"Playtime:\">" . gettotalplaytime($row) . "</td></tr>";
