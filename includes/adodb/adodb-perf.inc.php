@@ -947,7 +947,7 @@ Committed_AS:   348732 kB
 <?php
 		if (!isset($_REQUEST['sql'])) return;
 
-		$sql = trim($sql);
+		$sql = $this->trim($sql);
 		if (substr($sql,strlen($sql)-1) === ';') {
 			$print = true;
 			$sqla = $this->SplitSQL($sql);

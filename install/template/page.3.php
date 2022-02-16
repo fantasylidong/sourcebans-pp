@@ -1,8 +1,4 @@
 <?php
-if (!defined("IN_SB")) {
-    echo "You should not be here. Only follow links!";
-    die();
-}
 $errors = 0;
 $warnings = 0;
 
@@ -19,7 +15,7 @@ if (isset($_POST['username'], $_POST['password'], $_POST['server'], $_POST['port
 }
 ?>
 
-<b><p>This page will list all of the requirements to run the SourceBans web interface, and compare them with your current values. This page will also list some recomendations. These arn't required to run SourceBans web interface, but they are highly recomended.</p></b>
+<b><p>This page will list all of the requirements to run the SourceBans web interface, and compare them with your current values. This page will also list some recomendations. These aren't required to run SourceBans web interface, but they are highly recomended.</p></b>
 <table style="width: 101%; margin: 0 0 -2px -2px;">
     <tr>
         <td colspan="3" class="listtable_top"><b>PHP Requirements</b></td>
@@ -36,9 +32,9 @@ if (isset($_POST['username'], $_POST['password'], $_POST['server'], $_POST['port
    <tr>
   <td width="33%" height="16" class="listtable_1"><b>PHP Version</b></td>
   <td width="22%" height="16" class="listtable_top">N/A</td>
-    <td width="22%" height="16" class="listtable_1"><b>5.5</b></td>
+    <td width="22%" height="16" class="listtable_1"><b>7.4</b></td>
     <?php
-    if (version_compare(PHP_VERSION, "5.5") != -1) {
+    if (version_compare(PHP_VERSION, "7.4") != -1) {
         $class = "green";
     } else {
         $class = "red";
@@ -57,6 +53,21 @@ if (isset($_POST['username'], $_POST['password'], $_POST['server'], $_POST['port
 	<td width="22%" height="16" class="<?php echo $class?>"><?php echo $uploads?'On':'Off';?></td>
   </tr>
 
+  <td width="33%" height="16" class="listtable_1"><b>OpenSSL Support</b></td>
+	<td width="22%" height="16" class="listtable_top">N/A</td>
+	<td width="22%" height="16" class="listtable_1"><b>Enabled</b></td>
+	<?php
+        $openssl = extension_loaded('OpenSSL');
+        if ($openssl) {
+            $class = "green";
+        } else {
+            $class = 'red';
+            $errors++;
+        }
+     ?>
+	<td width="22%" height="16" class="<?php echo $class?>"><?php echo $openssl?'Enabled':'Disabled';?></td>
+  </tr>
+
   <td width="33%" height="16" class="listtable_1"><b>XML Support</b></td>
 	<td width="22%" height="16" class="listtable_top">N/A</td>
 	<td width="22%" height="16" class="listtable_1"><b>Enabled</b></td>
@@ -64,6 +75,15 @@ if (isset($_POST['username'], $_POST['password'], $_POST['server'], $_POST['port
 		$class = "green";
 	  else {  $class = "red"; $errors++;}?>
 	<td width="22%" height="16" class="<?php echo $class?>"><?php echo $xml?'Enabled':'Disabled';?></td>
+  </tr>
+
+  <td width="33%" height="16" class="listtable_1"><b>GMP Extension</b></td>
+	<td width="22%" height="16" class="listtable_top">N/A</td>
+	<td width="22%" height="16" class="listtable_1"><b>Enabled</b></td>
+	<?php $gmp = extension_loaded('gmp');if($gmp)
+		$class = "green";
+	  else {  $class = "red"; $errors++;}?>
+	<td width="22%" height="16" class="<?php echo $class?>"><?php echo $gmp?'Enabled':'Disabled';?></td>
   </tr>
 
   <td width="33%" height="16" class="listtable_1"><b>Register Globals</b></td>
@@ -103,7 +123,7 @@ if (isset($_POST['username'], $_POST['password'], $_POST['server'], $_POST['port
 <br /><br />
 <table style="width: 101%; margin: 0 0 -2px -2px;">
     <tr>
-        <td colspan="3" class="listtable_top"><b>MySQL Requirements</b></td>
+        <td colspan="3" class="listtable_top"><b>Database Requirements</b></td>
     </tr>
 </table>
 <div id="submit-main">
@@ -115,12 +135,33 @@ if (isset($_POST['username'], $_POST['password'], $_POST['server'], $_POST['port
 	 <td width="22%" height="16" class="listtable_top">Your Value</td>
   </tr>
    <tr>
-  <td width="33%" height="16" class="listtable_1"><b>MySQL Version</b></td>
+  <td width="33%" height="16" class="listtable_1"><b>Database Version</b></td>
 	<td width="22%" height="16" class="listtable_top">N/A</td>
-	<td width="22%" height="16" class="listtable_1"><b>5.0</b></td>
-	<?php if(version_compare($sql_version, "5") != -1)
-		$class = "green";
-	  else {  $class = "red"; $errors++;}?>
+	<td width="22%" height="16" class="listtable_1"><b>Mysql 5.5 or MariaDB 10.0.5</b></td>
+	<?php
+        //our SQL is using FULLTEXT in inno DB.
+        //this is only supported from Mysql 5.5 onwards
+        //and  >= MariaDB 10.0.5 ( https://mariadb.com/kb/en/full-text-index-overview/ )
+	if (strpos($sql_version, 'MARIADB') !== false){
+           	 //we have a mariadb.
+		//check for versions below 10.0.5
+		if(version_compare($sql_version, "10.0.5", "<")){
+			$class = "red";
+			$errors++;
+		}else{
+			$class = "green";
+		}
+        }else{
+            //other DB (presumably mysql)
+            //check for stuff lower then 5.5
+            if(version_compare($sql_version, "5.5", "<")) {
+				$class = "red";
+				$errors++;
+            }else{
+				$class = "green";
+            }
+	}
+	?>
 	<td width="22%" height="16" class="<?php echo $class?>"><?php echo $sql_version;?></td>
   </tr>
 </table>
@@ -150,13 +191,13 @@ if (isset($_POST['username'], $_POST['password'], $_POST['server'], $_POST['port
   </tr>
 
    <tr>
-  <td width="33%" height="16" class="listtable_1"><b>Compiled Themes Writable (/themes_c)</b></td>
+  <td width="33%" height="16" class="listtable_1"><b>Cache Writable (/cache)</b></td>
 	<td width="22%" height="16" class="listtable_top">N/A</td>
 	<td width="22%" height="16" class="listtable_1"><b>Yes</b></td>
-	<?php if(is_writable("../themes_c"))
+	<?php if(is_writable("../cache"))
 		$class = "green";
 	  else {  $class = "red"; $errors++;}?>
-	<td width="22%" height="16" class="<?php echo $class?>"><?php echo is_writable("../themes_c")?"Yes":"No";?></td>
+	<td width="22%" height="16" class="<?php echo $class?>"><?php echo is_writable("../cache")?"Yes":"No";?></td>
   </tr>
 
   <tr>
@@ -211,7 +252,6 @@ if (isset($_POST['username'], $_POST['password'], $_POST['server'], $_POST['port
 				<input type="hidden" name="port" value="<?php echo $_POST['port']?>">
 				<input type="hidden" name="prefix" value="<?php echo $_POST['prefix']?>">
 				<input type="hidden" name="apikey" value="<?php echo $_POST['apikey']?>">
-				<input type="hidden" name="sb-wp-url" value="<?php echo $_POST['sb-wp-url']?>">
 				<input type="hidden" name="sb-email" value="<?php echo $_POST['sb-email']?>">
 	</form>
 	<form action="index.php?step=3" method="post" name="sendback" id="sendback">
@@ -222,7 +262,6 @@ if (isset($_POST['username'], $_POST['password'], $_POST['server'], $_POST['port
 				<input type="hidden" name="port" value="<?php echo $_POST['port']?>">
 				<input type="hidden" name="prefix" value="<?php echo $_POST['prefix']?>">
 				<input type="hidden" name="apikey" value="<?php echo $_POST['apikey']?>">
-				<input type="hidden" name="sb-wp-url" value="<?php echo $_POST['sb-wp-url']?>">
 				<input type="hidden" name="sb-email" value="<?php echo $_POST['sb-email']?>">
 	</form>
 	<?php
