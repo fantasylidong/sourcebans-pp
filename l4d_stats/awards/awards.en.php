@@ -19,7 +19,7 @@ $award_time = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 在服
 $award_second = "<a class=\"alink-link2 text-left\" href=\"../ranking/%s\">%s</a> 来到 %s 名，数据为 <b>%s</b>.";
 $award_kills = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 是感染者毁灭者，共消灭 <b>%s 感染者</b>.</h6>";
 $award_headshots = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 瞄准僵尸头部第一名，总计 <b>%s 个爆头</b>.</h6>";
-$award_ratio = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 是爆头King，有着夸张的百分之 <b>%s; 爆头率</b>.</h6>";
+$award_ratio = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 是爆头King，有着夸张的百分之 <b>%s的 爆头率</b>.</h6>";
 $award_melee_kills = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 是厨艺精湛的刽子手，用近战杀害了 <b>%s 个小僵尸</b>.</h6>";
 $award_killsurvivor = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 掌控了生还者，造成了 <b>%s 名</b> 幸存者死亡.</h6>";
 $award_killinfected = "<h6><a class=\"alink-link2\" href=\"../ranking/%s\">%s</a> 消灭了最多的小僵尸，共 <b>%s 只</b> .</h6>";

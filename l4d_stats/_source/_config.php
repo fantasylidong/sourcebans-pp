@@ -94,7 +94,7 @@ $yt_movie15_title = "Left 4 Dead 2: The Last Stand #14 - Full Campaign (Full HD)
 
 // LOCAL IP FIX
 $fix_local_ip = "10.0.0.248";
-$fix_local_countryip = "114.114.114.114";
+$fix_local_countryip = "223.5.5.5";
 
 /*
 ==================== DO NOT CHANGE ====================
