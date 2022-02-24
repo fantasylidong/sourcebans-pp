@@ -14,6 +14,7 @@
 //error_reporting(E_ALL);
 error_reporting(0);
 
+
 require_once("_source/geoip2.phar");
 use GeoIp2\Database\Reader;
 $geoip = new Reader('_source/GeoLite2-Country.mmdb');
@@ -47,11 +48,11 @@ else {
 		$playername = ($showplayerflags ? "" : "")  . htmlentities($row['name'], ENT_COMPAT, "UTF-8") . "";
 		$line = createtablerowtooltip($row, $i);
 		$line .= "<tr onclick=\"window.location='./ranking/player.php?steamid=" . $row['steamid']."'\" style=\"cursor:pointer\"><td data-title=\"Gamemode:\">" . $lastgamemode . "</td>";
-		$line .= "<td data-title=\"Player:\">" . $playername . "</td><td data-title=\"Points:\">" . gettotalpoints($row) . "</td><td data-title=\"Country:\"><img width=\"40\" height=\"20\" src=\"_source/images/flags/" . strtolower($country_record->country->isoCode) . ".gif\" alt=\"" . strtolower($country_record->country->isoCode) . "\"></td><td data-title=\"Playtime:\">" . gettotalplaytime($row) . "</td></tr>";
+		$line .= "<td data-title=\"Player:\">" . $playername . "</td><td data-title=\"Points:\">" . gettotalpoints($row) . "</td><td data-title=\"Playtime:\">" . gettotalplaytime($row) . "</td></tr>";
 		$arr_online[] = $line;
 		$i++;
 	}
-	if (count($arr_online) == 0) $arr_online[] = "<tr><th colspan=\"5\" class=\"text-center\">Currently there are no Players online.</th></tr>";
+	if (count($arr_online) == 0) $arr_online[] = "<tr><th colspan=\"5\" class=\"text-center\">当前服务器组无人在线.</th></tr>";
 	$stats->set("online", $arr_online);
 	$output = $stats->fetch("" . $templatefiles['index_output.tpl']);
 }

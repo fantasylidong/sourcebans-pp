@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.31, created on 2022-02-17 04:56:30
+<?php /* Smarty version 2.6.31, created on 2022-02-24 03:30:39
          compiled from core/title.tpl */ ?>
 <div id="dialog-placement" class="popup popup_block">
     <div class="layout_box">
