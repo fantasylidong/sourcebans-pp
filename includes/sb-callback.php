@@ -22,6 +22,24 @@ use xPaw\SourceQuery\SourceQuery;
 
 require_once 'xajax.inc.php';
 require_once 'system-functions.php';
+// 只用于页面显示的地图名：
+// - 像 "cstrike/maps/de_dust2.bsp" 这种才按路径截到文件名（去掉扩展名）
+// - 像 "黑色狂欢节[1/5]" 这种不是路径，直接显示
+// - 把 ASCII "/" 换成 "∕"（U+2215），避免被前端/正则当分隔符
+function sb_display_map($map) {
+    if (!is_string($map)) $map = (string)$map;
+
+    $looksLikePath = (strpos($map, '/') !== false || strpos($map, '\\') !== false)
+                     && preg_match('/\.bsp(\s*)$/i', $map);
+
+    $name = $looksLikePath ? pathinfo($map, PATHINFO_FILENAME) : $map;
+
+    // 避免页面或正则把 "/" 当分隔
+    $name = str_replace('/', '∕', $name);
+
+    // 页面安全
+    return htmlspecialchars($name, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+}
 $xajax = new xajax();
 //$xajax->debugOn();
 $xajax->setRequestURI('./index.php');
@@ -1443,11 +1461,10 @@ function ServerHostPlayers($sid, $type="servers", $obId="", $tplsid="", $open=""
             if ($info['Secure']) {
                 $objResponse->addAssign("vac_$sid", "innerHTML", "<i class='fas fa-shield-alt fa-2x'></i>");
             }
-            $objResponse->addAssign("map_$sid", "innerHTML", basename($info['Map']));
+            $objResponse->addAssign("map_$sid", "innerHTML", sb_display_map($info['Map']));
             if (!$inHome) {
-                $objResponse->addScript(
-                    "$('mapimg_$sid').setProperty('src', '".GetMapImage($info['Map'])."').setProperty('alt', '".$info['Map']."').setProperty('title', '".basename($info['Map'])."');"
-                );
+                $title = addslashes(sb_display_map($info['Map']));
+                $objResponse->addScript("$('mapimg_$sid').setProperty('src', '".GetMapImage($mod, $info['Map'])."').setProperty('title', '".$title."');");
                 if ($info['Players'] == 0 || empty($info['Players'])) {
                     $objResponse->addScript("$('sinfo_$sid').setStyle('display', 'none');");
                     $objResponse->addScript("$('noplayer_$sid').setStyle('display', 'block');");
