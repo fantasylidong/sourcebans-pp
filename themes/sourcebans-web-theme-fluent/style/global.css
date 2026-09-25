@@ -2373,4 +2373,221 @@ hr {
 .tabcontent:first-of-type {
   display: block;
 }
+
+/* Dashboard */
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.dashboard-hero {
+  background: linear-gradient(135deg, var(--layout_main--color), rgba(45, 67, 121, 0.85));
+  color: #fff;
+  padding: 3.2rem;
+  border-radius: var(--border--radius);
+  box-shadow: var(--box-shadow);
+}
+
+.dashboard-hero__eyebrow {
+  display: inline-block;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 0.8rem;
+}
+
+.dashboard-hero__title {
+  font-size: 3rem;
+  margin: 0 0 1.2rem;
+  font-weight: 600;
+}
+
+.dashboard-hero__description {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  max-width: 720px;
+}
+
+.dashboard-hero__actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.dashboard-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.6rem;
+}
+
+.dashboard-metric {
+  padding: 2.4rem;
+  background: var(--box--backgroundColor);
+  border-radius: var(--border--radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.dashboard-metric__label {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: rgba(53, 60, 65, 0.65);
+}
+
+.dashboard-metric__value {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--theme-text);
+}
+
+.dashboard-metric__hint {
+  font-size: 1.2rem;
+  color: rgba(53, 60, 65, 0.6);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.4rem;
+}
+
+.dashboard-card {
+  background: var(--box--backgroundColor);
+  border-radius: var(--border--radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-card__header {
+  padding: 2rem 2.4rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.dashboard-card__title {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.dashboard-card__subtitle {
+  font-size: 1.2rem;
+  color: rgba(53, 60, 65, 0.65);
+}
+
+.dashboard-card__link {
+  font-size: 1.2rem;
+  color: var(--layout_main--color);
+  font-weight: 600;
+}
+
+.dashboard-card__body {
+  padding: 1.6rem 2.4rem 2.4rem;
+}
+
+.dashboard-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  padding: 1.2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 1.3rem;
+}
+
+.dashboard-table th {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.05rem;
+  color: rgba(53, 60, 65, 0.6);
+}
+
+.dashboard-table tr:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.dashboard-ban-length {
+  font-weight: 600;
+  text-align: center;
+}
+
+.dashboard-ban-length--unbanned {
+  color: var(--table-unbanned-text);
+}
+
+.dashboard-ban-length--temporary {
+  color: var(--table-banned-text);
+}
+
+.dashboard-ban-length--permanent {
+  color: var(--table-permanent-text);
+}
+
+.dashboard-empty {
+  padding: 2rem;
+  text-align: center;
+  color: rgba(53, 60, 65, 0.7);
+  background: var(--theme-area_background_light);
+  border-radius: var(--border--radius);
+}
+
+.dashboard-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.dashboard-list li {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 1.6rem;
+  border-radius: var(--border--radius);
+  background: var(--theme-area_background_light);
+}
+
+.dashboard-list__rank {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--layout_main--color);
+}
+
+.dashboard-list__name {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.dashboard-list__meta {
+  font-size: 1.2rem;
+  color: rgba(53, 60, 65, 0.7);
+}
+
+@media (max-width: 960px) {
+  .dashboard-hero {
+    padding: 2.4rem;
+  }
+
+  .dashboard-card__body {
+    padding: 1.6rem;
+  }
+
+  .dashboard-card__header {
+    padding: 1.6rem 1.6rem 0;
+  }
+}
 /*# sourceMappingURL=global.css.map */
