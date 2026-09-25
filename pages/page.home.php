@@ -167,11 +167,23 @@ while (!$res->EOF) {
 }
 
 
+require_once ROOT . 'includes/l4d_stats.php';
+$l4dStats = sbpp_fetch_l4d_stats();
+
+$dashboardIntro = array(
+    'headline'    => $l4dStats['site']['name'] ?? Config::get('dash.intro.title'),
+    'game'        => $l4dStats['site']['game'] ?? null,
+    'description' => $l4dStats['site']['welcome'] ?? Config::get('dash.intro.text'),
+    'steam_group' => $l4dStats['site']['steam_group'] ?? null,
+    'stats_url'   => $l4dStats['site']['stats_url'] ?? null,
+);
+
 require(TEMPLATES_PATH . "/page.servers.php"); //Set theme vars from servers page
 
+$theme->assign('dashboard_intro', $dashboardIntro);
 $theme->assign('dashboard_lognopopup', Config::getBool('dash.lognopopup'));
-$theme->assign('dashboard_title', Config::get('dash.intro.title'));
-$theme->assign('dashboard_text', Config::get('dash.intro.text'));
+$theme->assign('dashboard_title', $dashboardIntro['headline']);
+$theme->assign('dashboard_text', $dashboardIntro['description']);
 $theme->assign('players_blocked', $stopped);
 $theme->assign('total_blocked', $totalstopped);
 
@@ -180,5 +192,12 @@ $theme->assign('total_bans', $BanCount);
 
 $theme->assign('total_comms', $CommCount);
 $theme->assign('players_commed', $comms);
+
+$theme->assign('sourcebans_summary', array(
+    'total_bans'    => $BanCount,
+    'total_comms'   => $CommCount,
+    'total_blocked' => $totalstopped,
+));
+$theme->assign('l4d_stats', $l4dStats);
 
 $theme->display('page_dashboard.tpl');
